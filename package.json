@@ -1,0 +1,26 @@
+{
+  "name": "Geo_Quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaadiaELF/Geo_Quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaadiaELF/Geo_Quiz/issues"
+  },
+  "homepage": "https://github.com/SaadiaELF/Geo_Quiz#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "mongoose": "^6.1.4"
+  }
+}

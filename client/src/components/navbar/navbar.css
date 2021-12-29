@@ -5,11 +5,11 @@
 }
 
 #brand {
-    color: rgb(202, 195, 195);
+    color: #d9d9d9;
 }
 
 #brand:hover {
-    color: #f0f0f0;
+    color: #fff;
 }
 
 #responsive-navbar-nav {

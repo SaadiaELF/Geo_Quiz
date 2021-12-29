@@ -1,1 +1,7 @@
-
+.hero {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: 300;
+    min-height: 100vh;
+}

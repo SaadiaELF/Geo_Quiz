@@ -5,21 +5,24 @@ import icon from "../../assets/geography.png";
 function Header() {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container >
-                    <Nav.Item><Image id="icon" src={icon}></Image></Nav.Item>
-                    <Navbar.Brand href="/">GeoQuiz</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse className="justify-content-center" id="responsive-navbar-nav">
-                        <Nav>
-                            {/* <Nav.Link href="">Dashboard</Nav.Link>
-                            <Nav.Link href="">Login</Nav.Link>
-                            <Nav.Link href="">SignUp</Nav.Link>
-                            <Nav.Link href="">LogOut</Nav.Link> */}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+            <div className="header-blue">
+                <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
+                    <Container>
+                        <Nav.Item><Image id="icon" src={icon}></Image></Nav.Item>
+                        <Navbar.Brand id="brand" href="/">GeoQuiz</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
+                            <Nav>
+                                <Nav.Link className="link" href="">Dashboard</Nav.Link>
+                                <Nav.Link className="link" >Log In</Nav.Link>
+                                <Nav.Link className="link" >Sign Up</Nav.Link>
+                                <Nav.Link className="link" >Log Out</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+
+            </div>
         </div>
     )
 }

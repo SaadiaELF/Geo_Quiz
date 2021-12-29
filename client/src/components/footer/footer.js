@@ -2,9 +2,9 @@ import "./footer.css";
 
 function Footer() {
     return (
-        <div>
-
-        </div>
+        <footer className="footer fixed-bottom">
+            <p className="text-center text-muted "> © 2021 All Rights Reserved, by Saadia El fekak </p>
+        </footer>
     )
 }
 

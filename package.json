@@ -1,5 +1,5 @@
 {
-  "name": "Geo_Quiz",
+  "name": "geoquiz",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/SaadiaELF/Geo_Quiz#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "mongoose": "^6.1.4"

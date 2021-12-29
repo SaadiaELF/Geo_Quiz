@@ -1,27 +1,14 @@
-import { Navbar, Nav, Image, Container } from "react-bootstrap";
+import GQNavbar from "../navbar/navbar";
+import Hero from "../hero/hero";
 import "./header.css";
-import icon from "../../assets/geography.png";
+
 
 function Header() {
     return (
         <div>
             <div className="header-blue">
-                <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
-                    <Container>
-                        <Nav.Item><Image id="icon" src={icon}></Image></Nav.Item>
-                        <Navbar.Brand id="brand" href="/">GeoQuiz</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-                            <Nav>
-                                <Nav.Link className="link" href="">Dashboard</Nav.Link>
-                                <Nav.Link className="link" >Log In</Nav.Link>
-                                <Nav.Link className="link" >Sign Up</Nav.Link>
-                                <Nav.Link className="link" >Log Out</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-
+                <GQNavbar></GQNavbar>
+                <Hero />
             </div>
         </div>
     )

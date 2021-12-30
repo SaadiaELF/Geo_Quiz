@@ -6,6 +6,8 @@
 
 #brand {
     color: #d9d9d9;
+    font-family: 'Luxurious Roman', Georgia, 'Times New Roman', cursive;
+    font-weight: bold;
 }
 
 #brand:hover {
@@ -14,6 +16,7 @@
 
 #responsive-navbar-nav {
     margin-top: .5rem;
+    font-family: 'Roboto Slab', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 @media (min-width:768px) {
@@ -24,7 +27,7 @@
 }
 
 .link {
-    color: #d9d9d9;
+    color: #f0eeee;
     margin-right: .5rem;
     text-decoration: none;
 }

@@ -1,5 +1,5 @@
-import GQNavbar from "../components/navbar/navbar";
-import Hero from "../components/hero/hero";
+import GQNavbar from "../../components/navbar/navbar";
+import Hero from "../../components/hero/hero";
 import "./Home.css";
 
 function Home() {

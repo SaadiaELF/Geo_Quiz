@@ -6,10 +6,10 @@ import "./header.css";
 function Header() {
     return (
         <div>
-            <div className="header-blue">
+            <header>
                 <GQNavbar></GQNavbar>
                 <Hero />
-            </div>
+            </header>
         </div>
     )
 }

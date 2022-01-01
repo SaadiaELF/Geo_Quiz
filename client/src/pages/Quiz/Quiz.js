@@ -1,9 +1,15 @@
 import GQNavbar from "../../components/navbar/navbar";
+import Hero from "../../components/hero/hero";
 
 function Quiz() {
     return (
         <div>
-            <GQNavbar/>
+            <header>
+                <GQNavbar></GQNavbar>
+                <Hero >
+
+                </Hero>
+            </header>
         </div>
     )
 }

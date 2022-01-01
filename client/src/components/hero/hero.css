@@ -5,19 +5,3 @@
     font-weight: 300;
     min-height: 100vh;
 }
-
-.Card {
-    background: rgba(12, 12, 12, 0.6);
-    width: 80%;
-    margin-top: 100px;
-    font-family: 'Roboto Slab', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.Card h1 {
-    font-family: 'Luxurious Roman', Georgia, 'Times New Roman', cursive;
-    font-weight: bold;
-}
-
-.Card p {
-    font-family: 'Roboto Slab', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}

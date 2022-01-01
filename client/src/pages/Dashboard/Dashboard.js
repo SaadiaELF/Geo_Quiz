@@ -3,7 +3,7 @@ import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import "./Dashboard.css";
 
-function Home() {
+function Dashboard() {
     return (
         <header>
             <GQNavbar></GQNavbar>
@@ -48,4 +48,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default Dashboard;

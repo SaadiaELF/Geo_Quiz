@@ -3,7 +3,7 @@ import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import "./SignUp.css";
 
-function Home() {
+function SignUp() {
     return (
         <header>
             <GQNavbar></GQNavbar>
@@ -15,4 +15,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default SignUp;

@@ -7,9 +7,8 @@ function Hero(props) {
             <Container className="hero">
                 <Row className="justify-content-center" >
                     <Card className="Card text-center">
-                        <Card.Body>
-                            {props.children}
-                        </Card.Body>
+                    {props.children}
+                        
                     </Card>
                 </Row>
             </Container>

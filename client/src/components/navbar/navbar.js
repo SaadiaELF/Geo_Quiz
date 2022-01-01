@@ -12,6 +12,7 @@ function GQNavbar() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                         <Nav>
+                            <Nav.Link className="link" href="">Home</Nav.Link>
                             <Nav.Link className="link" href="">Dashboard</Nav.Link>
                             <Nav.Link className="link" >Log In</Nav.Link>
                             <Nav.Link className="link" >Sign Up</Nav.Link>

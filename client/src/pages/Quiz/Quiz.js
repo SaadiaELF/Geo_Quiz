@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button, Card,ToggleButton } from "react-bootstrap";
+import { Button, Card, ToggleButton } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
+import "./Quiz.css";
 
 function Quiz() {
     const [radioValue, setRadioValue] = useState('1');
@@ -16,30 +17,33 @@ function Quiz() {
             <header>
                 <GQNavbar></GQNavbar>
                 <Hero >
-                    <Card.Header as="h5">Question n°</Card.Header>
-                    <Card.Body>
-                        <Card.Title className="text-start">Question text</Card.Title>
-                        <Card.Text className="d-grid gap-2">
-                            {answers.map((radio, idx) => (
-                                <ToggleButton
-                                    key={idx}
-                                    id={`radio-${idx}`}
-                                    className="text-start"
-                                    type="radio"
-                                    variant='light'
-                                    name="radio"
-                                    value={radio.value}
-                                    checked={radioValue === radio.value}
-                                    onChange={(e) => setRadioValue(e.currentTarget.value)}
-                                >
-                                    {radio.name}
-                                </ToggleButton>
-                            ))}
-                        </Card.Text>
+                    <Card className="quiz-card text-center">
+                        <Card.Header as="h5">Question n°</Card.Header>
+                        <Card.Body>
+                            <Card.Title as="h6" className="text-start">Question text</Card.Title>
+                            <Card.Text className="d-grid gap-2">
+                                {answers.map((radio, idx) => (
+                                    <ToggleButton
+                                        key={idx}
+                                        id={`radio-${idx}`}
+                                        className="text-start"
+                                        type="radio"
+                                        variant='light'
+                                        name="radio"
+                                        value={radio.value}
+                                        checked={radioValue === radio.value}
+                                        onChange={(e) => setRadioValue(e.currentTarget.value)}
+                                    >
+                                        {radio.name}
+                                    </ToggleButton>
+                                ))}
+
+                            </Card.Text>
+                        </Card.Body>
                         <Card.Footer className="text-end">
                             <Button variant="danger">Next</Button>
                         </Card.Footer>
-                    </Card.Body>
+                    </Card>
                 </Hero>
             </header>
         </div >

@@ -8,8 +8,10 @@ function SignUp() {
         <header>
             <GQNavbar></GQNavbar>
             <Hero>
-                <Card.Body>
-                </Card.Body>
+                <Card className="Card text-center">
+                    <Card.Body>
+                    </Card.Body>
+                </Card>
             </Hero>
         </header>
     )

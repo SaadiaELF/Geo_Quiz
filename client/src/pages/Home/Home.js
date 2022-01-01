@@ -8,7 +8,7 @@ function Home() {
         <header>
             <GQNavbar></GQNavbar>
             <Hero>
-            <Card className="Card text-center">
+            <Card className="home-card text-center">
                 <Card.Body>
                     <h1>GeoQuiz</h1>
                     <p>Aute Lorem non occaecat ullamco culpa officia. Adipisicing do do pariatur id. Reprehenderit magna elit eu do laboris pariatur adipisicing dolor eu Lorem sint enim excepteur aliquip. Tempor nostrud esse enim fugiat. Labore reprehenderit dolor cillum ipsum culpa officia nisi amet id dolor veniam dolore incididunt qui. Voluptate consectetur labore ipsum dolor aliquip voluptate sit. </p>

@@ -1,4 +1,4 @@
-import GQNavbar from "../../components/navbar";
+import GQNavbar from "../../components/navbar/navbar";
 
 function Quiz() {
     return (

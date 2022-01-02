@@ -9,6 +9,7 @@ function SignUp() {
             <GQNavbar></GQNavbar>
             <Hero>
                 <Card className="signup-card">
+                    <Card.Header as="h5" className="text-start">Create new Account</Card.Header>
                     <Card.Body>
                         <Form className="text-center">
                             <Form.Group className="mb-3 text-start" controlId="username">
@@ -47,8 +48,11 @@ function SignUp() {
                                     </Col>
                                 </Row>
                             </Form.Group>
+                            <Form.Text className="text-muted float-start">
+                                Already have an account ? <span>Sign in </span>
+                            </Form.Text>
                             <Button variant="primary" type="submit">
-                                Submit
+                                Sign Up
                             </Button>
                         </Form>
                     </Card.Body>

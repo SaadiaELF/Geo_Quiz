@@ -21,11 +21,13 @@ function Quiz() {
         getQuestions()
     }, []);
 
-    const handleAnswerButtonClick = () => {
+    const handleAnswerButtonClick = (answer) => {
         const nextQuestion = currentQuestion + 1;
         setCurrentQuestion(nextQuestion);
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
+            if (answer === true) { console.log('correct')}
+            else { console.log('incorrect')}
         } else {
             alert('you reached the end of the quiz');
         }
@@ -46,10 +48,10 @@ function Quiz() {
                                         id={`radio-${idx}`}
                                         className="text-start"
                                         type="radio"
-                                        variant='light'
+                                        variant='outline-secondary'
                                         name="radio"
-                                        value={answer}
-                                        onClick={() => handleAnswerButtonClick()}
+                                        value={answer[1]}
+                                        onClick={() => handleAnswerButtonClick(answer[1])}
                                     >
                                         {answer}
                                     </ToggleButton>

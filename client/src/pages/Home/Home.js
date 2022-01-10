@@ -1,4 +1,4 @@
-import { Button, Card, Link } from "react-bootstrap";
+import { Button, Card} from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import "./Home.css";

@@ -8,13 +8,13 @@ import "./Quiz.css";
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [questions, setQuestions] = useState([{ question: "", correct_answer: "", answers: [] }]);
+    const score = 0;
 
     useEffect(() => {
         function getQuestions() {
             API.getQuestions()
                 .then(questions => {
                     setQuestions(questions);
-                    console.log(questions)
                 })
                 .catch(err => console.log(err));
         }
@@ -26,8 +26,10 @@ function Quiz() {
         setCurrentQuestion(nextQuestion);
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
-            if (answer === true) { console.log('correct')}
-            else { console.log('incorrect')}
+            if (answer === true) {
+                console.log('correct')
+            }
+            else { console.log('incorrect') }
         } else {
             alert('you reached the end of the quiz');
         }
@@ -38,9 +40,9 @@ function Quiz() {
                 <GQNavbar></GQNavbar>
                 <Hero >
                     <Card className="quiz-card text-center">
-                        <Card.Header as="h5">Question n° {currentQuestion + 1}</Card.Header>
+                        <Card.Header as="h5">Question n° {currentQuestion + 1}  Score : {score}</Card.Header>
                         <Card.Body>
-                            <Card.Title as="h6" className="text-start">{questions[currentQuestion].question}</Card.Title>
+                            <Card.Title as="h6" className="text-start" dangerouslySetInnerHTML={{ __html: questions[currentQuestion].question }} />
                             <Card.Text className="d-grid gap-2">
                                 {questions[currentQuestion].answers.map((answer, idx) => (
                                     <ToggleButton
@@ -52,13 +54,11 @@ function Quiz() {
                                         name="radio"
                                         value={answer[1]}
                                         onClick={() => handleAnswerButtonClick(answer[1])}
-                                    >
-                                        {answer}
-                                    </ToggleButton>
+                                        dangerouslySetInnerHTML={{ __html: answer[0] }}
+                                    />
                                 ))}
                             </Card.Text>
                         </Card.Body>
-
                     </Card>
                 </Hero>
             </header>

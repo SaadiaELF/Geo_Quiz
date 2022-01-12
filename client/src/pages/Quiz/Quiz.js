@@ -4,6 +4,7 @@ import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import API from "../../utils/API";
 import "./Quiz.css";
+import Question from "../../components/question/question";
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -48,9 +49,10 @@ function Quiz() {
                 <GQNavbar></GQNavbar>
                 <Hero >
                     <Card className="quiz-card">
-                        <Card.Header as="h5">
-                            <p>Question n° {currentQuestion + 1} </p>  <p>Score : {score}</p>
-                        </Card.Header>
+                        <Question
+                        currentQuestion = {currentQuestion + 1}
+                        score = {score}
+                        />
                         <Card.Body>
                             <Card.Title as="h6" className="text-start" dangerouslySetInnerHTML={{ __html: questions[currentQuestion].question }} />
                             <Card.Text className="d-grid gap-2">

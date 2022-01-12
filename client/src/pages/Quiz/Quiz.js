@@ -35,7 +35,9 @@ function Quiz() {
                 setChoice("Correct!");
                 setScore(score + 10);
             }
-            else { setChoice("Incorrect!") }
+            else {
+                setChoice("Incorrect!")
+            }
         } else {
             alert('you reached the end of the quiz');
         }
@@ -71,7 +73,7 @@ function Quiz() {
                             <Modal.Header closeButton>
                                 <Modal.Title>{choice}</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>{choice === 'Correct!'? "Genius!": "Sorry!"}</Modal.Body>
+                            <Modal.Body>{choice === 'Correct!' ? "Genius!" : "Sorry!"}</Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
                                     Close

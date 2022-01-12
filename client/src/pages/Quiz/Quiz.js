@@ -5,6 +5,7 @@ import Hero from "../../components/hero/hero";
 import API from "../../utils/API";
 import "./Quiz.css";
 import Question from "../../components/question/question";
+import AnswerModal from "../../components/answerModal/answerModal";
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -50,8 +51,8 @@ function Quiz() {
                 <Hero >
                     <Card className="quiz-card">
                         <Question
-                        currentQuestion = {currentQuestion + 1}
-                        score = {score}
+                            currentQuestion={currentQuestion + 1}
+                            score={score}
                         />
                         <Card.Body>
                             <Card.Title as="h6" className="text-start" dangerouslySetInnerHTML={{ __html: questions[currentQuestion].question }} />
@@ -71,17 +72,11 @@ function Quiz() {
                                 ))}
                             </Card.Text>
                         </Card.Body>
-                        <Modal show={show} onHide={handleClose} animation={false}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>{choice}</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>{choice === 'Correct!' ? "Genius!" : "Sorry!"}</Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
+                        <AnswerModal
+                            show={show}
+                            handleClose={handleClose}
+                            choice={choice}
+                        />
                     </Card>
                 </Hero>
             </header>

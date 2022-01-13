@@ -1,4 +1,5 @@
-import { Card, Form, Button, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Card, Form, Button, Col, Row} from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import "./SignUp.css";
@@ -18,11 +19,11 @@ function SignUp() {
                                         <Form.Label>Username</Form.Label>
                                     </Col>
                                     <Col>
-                                        <Form.Control type="text" placeholder="Username" />
+                                        <Form.Control type="text" placeholder="Username" autoComplete="username" />
                                     </Col>
                                 </Row>
                             </Form.Group>
-                            <Form.Group className="mb-3 text-start" controlId="email">
+                            <Form.Group className="mb-3 text-start" >
                                 <Row>
                                     <Col>
                                         <Form.Label>Email address</Form.Label>
@@ -35,21 +36,21 @@ function SignUp() {
                                     </Col>
                                 </Row>
                             </Form.Group>
-                            <Form.Group className="mb-3 text-start" controlId="password">
+                            <Form.Group className="mb-3 text-start" >
                                 <Row>
                                     <Col>
                                         <Form.Label>Password</Form.Label>
                                     </Col>
                                     <Col>
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="password" placeholder="Password" autoComplete="new-password" />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="password" placeholder="Confirm Password" />
+                                        <Form.Control type="password" placeholder="Confirm Password" autoComplete="new-password" />
                                     </Col>
                                 </Row>
                             </Form.Group>
                             <Form.Text className="text-muted float-start">
-                                Already have an account ? <span>Sign in </span>
+                                Already have an account ? <Link to="/login">Sign in </Link>
                             </Form.Text>
                             <Button variant="primary" type="submit">
                                 Sign Up

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, Form, Button, Col, Row } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
@@ -20,7 +21,7 @@ function Login() {
                                         <Form.Label>Email address</Form.Label>
                                     </Col>
                                     <Col>
-                                        <Form.Control type="email" placeholder="Email" />
+                                        <Form.Control type="email" placeholder="Email" autoComplete="current-email" />
                                     </Col>
                                 </Row>
                             </Form.Group>
@@ -30,12 +31,12 @@ function Login() {
                                         <Form.Label>Password</Form.Label>
                                     </Col>
                                     <Col>
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="password" placeholder="Password" autoComplete="current-password" />
                                     </Col>
                                 </Row>
                             </Form.Group>
                             <Form.Text className="text-muted float-start">
-                                Don't have an account ? <span>Sign up </span>
+                                Don't have an account ? <Link to="/signup">Sign up </Link>
                             </Form.Text>
                             <Button variant="primary" type="submit">
                                 Sign In

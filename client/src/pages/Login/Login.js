@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, Form, Button, Col, Row } from "react-bootstrap";
+import { Card, Form, Button } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import UserForm from "../../components/userForm/userForm";

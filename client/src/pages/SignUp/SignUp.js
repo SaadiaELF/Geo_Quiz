@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { Card, Form, Button, Col, Row} from "react-bootstrap";
+import { Card, Form, Button } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import "./SignUp.css";
+import UserForm from "../../components/userForm/userForm";
 
 function SignUp() {
     return (
@@ -13,42 +14,28 @@ function SignUp() {
                     <Card.Header as="h5" className="text-start">Create new Account</Card.Header>
                     <Card.Body>
                         <Form className="text-center">
-                            <Form.Group className="mb-3 text-start" controlId="username">
-                                <Row>
-                                    <Col md="4">
-                                        <Form.Label>Username</Form.Label>
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="text" placeholder="Username" autoComplete="username" />
-                                    </Col>
-                                </Row>
-                            </Form.Group>
-                            <Form.Group className="mb-3 text-start" >
-                                <Row>
-                                    <Col>
-                                        <Form.Label>Email address</Form.Label>
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="email" placeholder="Email" />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="email" placeholder="Confirm Email" />
-                                    </Col>
-                                </Row>
-                            </Form.Group>
-                            <Form.Group className="mb-3 text-start" >
-                                <Row>
-                                    <Col>
-                                        <Form.Label>Password</Form.Label>
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="password" placeholder="Password" autoComplete="new-password" />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="password" placeholder="Confirm Password" autoComplete="new-password" />
-                                    </Col>
-                                </Row>
-                            </Form.Group>
+                            <UserForm
+                                md="4"
+                                col="2"
+                                label="Username"
+                                type="text"
+                                placeholder="Username"
+                            />
+                            <UserForm
+                                col="3"
+                                label="Email address"
+                                type="email"
+                                placeholder="Email"
+                                confirmPlaceholder="Confirm Email"
+                            />
+                            <UserForm
+                                col="3"
+                                label="Password"
+                                type="password"
+                                placeholder="Password"
+                                confirmPlaceholder="Confirm Password"
+                                autocomplete="new-password"
+                            />
                             <Form.Text className="text-muted float-start">
                                 Already have an account ? <Link to="/login">Sign in </Link>
                             </Form.Text>

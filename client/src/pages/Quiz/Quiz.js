@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Card, ToggleButton, Modal, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import API from "../../utils/API";
 import "./Quiz.css";
 import Question from "../../components/question/question";
 import AnswerModal from "../../components/answerModal/answerModal";
+import QuestionContext from "../../utils/QuestionContext";
+import Choices from "../../components/choices/choices";
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,7 +15,7 @@ function Quiz() {
     const [score, setScore] = useState(0);
     const [choice, setChoice] = useState("");
     const [show, setShow] = useState(false);
-
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -45,7 +47,7 @@ function Quiz() {
         }
     };
     return (
-        <div>
+        <QuestionContext.Provider value={questions}>
             <header>
                 <GQNavbar></GQNavbar>
                 <Hero >
@@ -54,24 +56,11 @@ function Quiz() {
                             currentQuestion={currentQuestion + 1}
                             score={score}
                         />
-                        <Card.Body>
-                            <Card.Title as="h6" className="text-start" dangerouslySetInnerHTML={{ __html: questions[currentQuestion].question }} />
-                            <Card.Text className="d-grid gap-2">
-                                {questions[currentQuestion].answers.map((answer, idx) => (
-                                    <ToggleButton
-                                        key={idx}
-                                        id={`radio-${idx}`}
-                                        className="text-start"
-                                        type="radio"
-                                        variant='outline-secondary'
-                                        name="radio"
-                                        value={answer[1]}
-                                        onClick={() => { handleAnswerButtonClick(answer[1]); handleShow() }}
-                                        dangerouslySetInnerHTML={{ __html: answer[0] }}
-                                    />
-                                ))}
-                            </Card.Text>
-                        </Card.Body>
+                        <Choices
+                            currentQuestion={currentQuestion}
+                            handleAnswerButtonClick={handleAnswerButtonClick}
+                            handleShow={handleShow}
+                        />
                         <AnswerModal
                             show={show}
                             handleClose={handleClose}
@@ -80,7 +69,7 @@ function Quiz() {
                     </Card>
                 </Hero>
             </header>
-        </div >
+        </QuestionContext.Provider>
     )
 }
 

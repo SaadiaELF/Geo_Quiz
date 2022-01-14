@@ -8,10 +8,10 @@ function UserForm(props) {
                     <Form.Label>{props.label}</Form.Label>
                 </Col>
                 <Col>
-                    <Form.Control type={props.type} placeholder={props.placeholder} autoComplete={props.autocomplete} />
+                    <Form.Control type={props.type} placeholder={props.placeholder} autoComplete={props.autocomplete} onChange={props.onChange} />
                 </Col>
                 {props.col === "3" ? <Col>
-                    <Form.Control type={props.type} placeholder={props.confirmPlaceholder} autoComplete={props.autocomplete} />
+                    <Form.Control type={props.type} placeholder={props.confirmPlaceholder} autoComplete={props.autocomplete} onChange={props.onChange}/>
                 </Col> : ""}
 
             </Row>

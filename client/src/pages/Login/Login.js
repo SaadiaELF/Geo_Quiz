@@ -5,8 +5,22 @@ import Hero from "../../components/hero/hero";
 import UserForm from "../../components/userForm/userForm";
 import AuthService from "../../services/auth.service"
 import "./Login.css";
+import { useState } from "react";
 
 function Login() {
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
+        loading: false,
+        message: ""
+    });
+    const onChangeEmail = (e) => {
+        setUser({ ...user, email: e.target.value })
+        console.log(user)
+    }
+    const onChangePassword = (e) => {
+        setUser({ ...user, password: e.target.value })
+    }
     const required = value => {
         if (!value) {
             return (
@@ -32,6 +46,7 @@ function Login() {
                                 type="email"
                                 placeholder="Email"
                                 autocomplete="current-email"
+                                onChange={onChangeEmail}
                             />
                             <UserForm
                                 md="4"
@@ -40,6 +55,8 @@ function Login() {
                                 type="password"
                                 placeholder="Password"
                                 autocomplete="current-password"
+                                onChange={onChangePassword}
+
                             />
                             <Form.Text className="text-muted float-start">
                                 Don't have an account ? <Link to="/signup">Sign up </Link>

@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+  origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
@@ -31,11 +31,9 @@ db.mongoose
     process.exit();
   });
 
-  
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to geoquiz application." });
-});
+// routes
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

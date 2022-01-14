@@ -3,9 +3,20 @@ import { Card, Form, Button } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import UserForm from "../../components/userForm/userForm";
+import AuthService from "../../services/auth.service"
 import "./Login.css";
 
 function Login() {
+    const required = value => {
+        if (!value) {
+            return (
+                <div className="alert alert-danger" role="alert">
+                    This field is required!
+                </div>
+            );
+        }
+    };
+
     return (
         <header>
             <GQNavbar></GQNavbar>

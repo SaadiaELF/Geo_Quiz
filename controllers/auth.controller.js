@@ -33,7 +33,7 @@ exports.signin = (req, res) => {
       }
 
       if (!user) {
-        return res.status(404).send({ message: "User Not found." });
+        return res.status(404).send({ message: "Your email or password is incorrect, please try logging in again." });
       }
 
       var passwordIsValid = bcrypt.compareSync(

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Card, Form, Button } from "react-bootstrap";
+import { Card, Form, Button, Alert } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
 import UserForm from "../../components/userForm/userForm";
@@ -12,7 +12,7 @@ function Login() {
     const [user, setUser] = useState({
         email: "",
         password: "",
-        // message: ""
+        message: ""
     });
     const onChangeEmail = (e) => {
         setUser({ ...user, email: e.target.value })
@@ -29,7 +29,16 @@ function Login() {
                 navigate("/dashboard");
                 window.location.reload();
             },
-            // error => { console.log(error) }
+            error => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+
+                setUser({ ...user, message: resMessage });
+            }
 
         );
     }
@@ -61,12 +70,18 @@ function Login() {
                                 onChange={onChangePassword}
 
                             />
+                               {user.message && (
+                                <Alert variant="danger">
+                                    {user.message}
+                                </Alert>
+                            )}
                             <Form.Text className="text-muted float-start">
                                 Don't have an account ? <Link to="/signup">Sign up </Link>
                             </Form.Text>
                             <Button variant="primary" type="submit">
                                 Sign In
                             </Button>
+                         
                         </Form>
                     </Card.Body>
                 </Card>

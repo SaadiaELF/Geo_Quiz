@@ -14,10 +14,12 @@ function Login() {
         password: "",
         message: ""
     });
+    
     const onChangeEmail = (e) => {
         setUser({ ...user, email: e.target.value })
         console.log(user)
     }
+
     const onChangePassword = (e) => {
         setUser({ ...user, password: e.target.value })
     }

@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, Form, Button } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
-import "./SignUp.css";
+import AuthService from "../../services/auth.service";
 import UserForm from "../../components/userForm/userForm";
+import "./SignUp.css";
 
 function SignUp() {
+    const [user, setUser] = useState({
+        username: "",
+        email: "",
+        password: "",
+        message: ""
+    });
+    const onChangeUsername = (e) => {
+        setUser({ ...user, username: e.target.value })
+    }
+    const onChangeEmail = (e) => {
+        setUser({ ...user, email: e.target.value })
+    }
+    const onChangePassword = (e) => {
+        setUser({ ...user, password: e.target.value })
+    }
+
     return (
         <header>
             <GQNavbar></GQNavbar>
@@ -20,6 +38,7 @@ function SignUp() {
                                 label="Username"
                                 type="text"
                                 placeholder="Username"
+                                onChange={onChangeUsername}
                             />
                             <UserForm
                                 col="3"
@@ -27,6 +46,7 @@ function SignUp() {
                                 type="email"
                                 placeholder="Email"
                                 confirmPlaceholder="Confirm Email"
+                                onChange={onChangeEmail}
                             />
                             <UserForm
                                 col="3"
@@ -35,6 +55,7 @@ function SignUp() {
                                 placeholder="Password"
                                 confirmPlaceholder="Confirm Password"
                                 autocomplete="new-password"
+                                onChange={onChangePassword}
                             />
                             <Form.Text className="text-muted float-start">
                                 Already have an account ? <Link to="/login">Sign in </Link>

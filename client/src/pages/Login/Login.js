@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import GQNavbar from "../../components/navbar/navbar";
@@ -5,7 +6,6 @@ import Hero from "../../components/hero/hero";
 import UserForm from "../../components/userForm/userForm";
 import AuthService from "../../services/auth.service";
 import "./Login.css";
-import { useState } from "react";
 
 function Login() {
     const navigate = useNavigate();

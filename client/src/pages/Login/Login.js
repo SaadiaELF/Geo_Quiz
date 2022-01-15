@@ -8,13 +8,14 @@ import AuthService from "../../services/auth.service";
 import "./Login.css";
 
 function Login() {
+    const [validated, setValidated] = useState(false);
     const navigate = useNavigate();
     const [user, setUser] = useState({
         email: "",
         password: "",
         message: ""
     });
-    
+
     const onChangeEmail = (e) => {
         setUser({ ...user, email: e.target.value })
         console.log(user)
@@ -24,8 +25,19 @@ function Login() {
         setUser({ ...user, password: e.target.value })
     }
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        setValidated(true);
+    };
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+
         AuthService.login(user.email, user.password).then(
             () => {
                 navigate("/dashboard");
@@ -52,7 +64,7 @@ function Login() {
                 <Card className="login-card">
                     <Card.Header as="h5" className="text-start">Sign in your account</Card.Header>
                     <Card.Body>
-                        <Form className="text-center" onSubmit={handleLogin}>
+                        <Form className="text-center" noValidate validated={validated} onSubmit={(e) => { handleLogin(e); handleSubmit(e) }}>
                             <UserForm
                                 md="4"
                                 col="2"
@@ -72,7 +84,7 @@ function Login() {
                                 onChange={onChangePassword}
 
                             />
-                               {user.message && (
+                            {user.message && (
                                 <Alert variant="danger">
                                     {user.message}
                                 </Alert>
@@ -83,7 +95,7 @@ function Login() {
                             <Button variant="primary" type="submit">
                                 Sign In
                             </Button>
-                         
+
                         </Form>
                     </Card.Body>
                 </Card>

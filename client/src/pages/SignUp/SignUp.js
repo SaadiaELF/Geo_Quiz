@@ -8,6 +8,7 @@ import UserForm from "../../components/userForm/userForm";
 import "./SignUp.css";
 
 function SignUp() {
+    const [validated, setValidated] = useState(false);
     const [user, setUser] = useState({
         username: "",
         email: "",
@@ -28,11 +29,20 @@ function SignUp() {
         setUser({ ...user, password: e.target.value })
     }
 
-    const handleRegister = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        setValidated(true);
+    };
+
+    const handleRegister = (event) => {
+        event.preventDefault();
 
         setUser({ ...user, message: "", successful: false });
-
 
         AuthService.register(
             user.username,
@@ -62,7 +72,7 @@ function SignUp() {
                 <Card className="signup-card">
                     <Card.Header as="h5" className="text-start">Create new Account</Card.Header>
                     <Card.Body>
-                        <Form className="text-center" onSubmit={handleRegister}>
+                        <Form noValidate validated={validated}  className="text-center" onSubmit={(e) => { handleRegister(e); handleSubmit(e) }}>
                             <UserForm
                                 md="4"
                                 col="2"

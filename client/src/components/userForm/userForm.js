@@ -10,13 +10,13 @@ function UserForm(props) {
                 <Col>
                     <Form.Control required type={props.type} placeholder={props.placeholder} autoComplete={props.autocomplete} onChange={props.onChange} validations={props.validations} />
                     <Form.Control.Feedback type="invalid">
-                        Please choose a {props.label}.
+                        Please choose {props.label}.
                     </Form.Control.Feedback>
                 </Col>
                 {props.col === "3" ? <Col>
                     <Form.Control required type={props.type} placeholder={props.confirmPlaceholder} autoComplete={props.autocomplete} onChange={props.onChange} validations={props.validations} />
                     <Form.Control.Feedback type="invalid">
-                        Please choose a {props.label}.
+                        Please choose {props.label}.
                     </Form.Control.Feedback>
                 </Col> : ""}
             </Row>
